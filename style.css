@@ -25,6 +25,8 @@ body {
 .menu {
     list-style: none;
     display: flex;
+    flex-grow: 1;
+    justify-content: flex-end; 
 }
 
 .menu li {
@@ -45,8 +47,17 @@ body {
 .submenu, .submenu-level-3 {
     position: absolute;
     background-color: #444;
-    display: none;
     list-style: none;
+    display: none;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    z-index: 1;
+}
+
+.submenu-level-3 {
+    left: 100%;
+    top: 0;
 }
 
 .menu li:hover > .submenu, .submenu li:hover > .submenu-level-3 {
@@ -62,11 +73,11 @@ body {
     background-color: #666;
 }
 
-/* Mobile Styles */
 .menu-icon {
     font-size: 30px;
     display: none;
     cursor: pointer;
+    color: white;
 }
 
 @media (max-width: 768px) {
@@ -87,6 +98,9 @@ body {
 
     .menu-icon {
         display: block;
+        position: absolute;
+        right: 20px; 
+        top: 15px;
     }
 
     .menu.show {
